@@ -5,15 +5,18 @@ import Data from '../../data/data.json';
 import './Escena.css'
 
 
-const Escena = () => {
+const Escena = (props) => {
+     const count = props.count;
 
      return(
        <div className ="escena">   
         {
-             Data.map ( data => {
+             Data.map ((data, index) => {
+                  const isActive = count === index
+
                   return (
-                       <div className='box'>
-                          {data.sentence}
+                       <div id={'escena-' + index} className={'box' + (isActive ? ' highlighted' : '')}>
+                         {data.sentence}
                        </div>
                   )
              })

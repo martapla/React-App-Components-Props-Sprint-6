@@ -1,30 +1,27 @@
+import React from 'react'
 import './Buttons.css'
-import {useState} from 'react'
 
+function Buttons(props){
+  const count = props.count
+  const setCount = props.setCount
 
-
-function Buttons (){
-  const [count,setCount] = useState(0);
-
-  const Previous=()=>{
-    if (count < 3){
-      setCount(count +1)
-    };
+  const Previous = () => {
+    if (count > 0)
+      setCount(c => c-1)
   }
 
-  const Next=()=>{
-    if (count > 0){
-      setCount(count -1)
-    };
+  const Next = () => {
+    if (count < 3)
+      setCount(c => c+1)
   }
 
 
   return (
     <div className='container'>
-        <div className='button' onClick = { ()=> Previous ()}>
+        <div className='button' onClick={() => Previous()}>
           Previous
         </div>
-        <div className='button' onClick = { ()=> Next ()}>
+        <div className='button' onClick={() => Next()}>
           Next
         </div>
     </div>
