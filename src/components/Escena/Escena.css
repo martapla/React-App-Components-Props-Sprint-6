@@ -1,0 +1,11 @@
+.box{
+    border : 0.125em solid black;
+    border-radius: 50px ;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+ }
+
+.box.highlighted {
+     background-color: pink;
+ }
